@@ -1,0 +1,7 @@
+framework:
+    # définit la langue par défaut
+    # sa valeur était préalablement en anglais(en)
+    default_locale: fr
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        providers:
