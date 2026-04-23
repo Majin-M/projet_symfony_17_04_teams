@@ -110,11 +110,25 @@ class RegisterUserType extends AbstractType
             //constraints permet de définir des contraintes de validation
             //UniqueEntity permet de définir l'entrée d'un champ comme étant unique dans la base de données
             //si la valeur entrée pour ce champ est déjà utilisée, l'utilisateur sera informé
-            'constraints' => [new UniqueEntity([
+            'constraints' => [new UniqueEntity(
                 //dans notre cas, on vérifie que l'adresse e-mail n'est pas déjà utilisée
-                'fields' =>['email'],
-                'message' =>'cet adresse e-mail est déjà utilisée'
-            ]
+                /**
+                 *L'ancienne façon (tableau d'options)
+                 * new UniqueEntity(['fields' => 'email', 'message' => '...'])
+                 * Symfony recevait un seul argument : un tableau associatif, puis devait deviner quelles clés correspondaient à quelles propriétés en le parcourant.
+                 *  C'était une convention "maison" de Symfony, pas du PHP standard.
+                 * La nouvelle façon (named arguments PHP)
+                 * new UniqueEntity(fields: 'email', message: '...')
+                 * Depuis PHP 8.0, le langage supporte nativement les named arguments. 
+                 * Symfony 7.3 a décidé d'en profiter pour que ses contraintes soient des classes PHP normales, 
+                 * où chaque paramètre du constructeur est explicitement nommé.
+                 * 
+                 */
+
+                //fields permet de définir les champs à vérifier
+                fields :['email'],
+                message :'cet adresse e-mail est déjà utilisée'
+            
 
                 )],
         ]);

@@ -17,6 +17,11 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class LoginController extends AbstractController
 {
     #[Route(path: '/login', name: 'app_login')]
+    /**
+     * @descritpion Affiche la page login
+     * @param AuthenticationUtils $authenticationUtils
+     * @return Response
+     */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // get the login error if there is one
@@ -33,6 +38,10 @@ class LoginController extends AbstractController
     }
 
     #[Route(path: '/logout', name: 'app_logout')]
+    /**
+     * @descritpion Déconnecte l'utilisateur
+     * @return void
+     */
     public function logout(): void
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');

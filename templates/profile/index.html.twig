@@ -13,12 +13,16 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Bienvenue dans l'espace membre!</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/symfony/projet_symfony/src/Controller/ProfileController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/symfony/projet_symfony/templates/profile/index.html.twig</code></li>
-    </ul>
+      {% if app.user %}
+    <div class="mb-3">
+        <!-- affichage de l'utilisateur connecté -->
+        <!-- app.user.userIdentifier renvoie l'identifiant de l'utilisateur connecté -->
+        <!-- logout_path() renvoie le chemin d'accès à la page de déconnexion -->
+        <!-- deconnexion est le nom du bouton de déconnexion -->
+        vous êtes connecté en tant que {{ app.user.lastname }}, <a href="{{ logout_path() }}">deconnexion</a>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

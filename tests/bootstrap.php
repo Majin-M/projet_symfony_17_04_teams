@@ -1,4 +1,5 @@
 <?php
+//ce fichier et son dossier parent tests ont été générés automatiquement par composer require --dev symfony/test-pack
 
 use Symfony\Component\Dotenv\Dotenv;
 

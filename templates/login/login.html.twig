@@ -20,15 +20,7 @@ le lien cdn de bootstrap a été ajouté dans base.html.twig
     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    {% if app.user %}
-    <div class="mb-3">
-        <!-- affichage de l'utilisateur connecté -->
-        <!-- app.user.userIdentifier renvoie l'identifiant de l'utilisateur connecté -->
-        <!-- logout_path() renvoie le chemin d'accès à la page de déconnexion -->
-        <!-- Logout est le nom du bouton de déconnexion -->
-        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ logout_path() }}">Logout</a>
-    </div>
-    {% endif %}
+
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <!-- formulaire de connexion -->
