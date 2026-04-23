@@ -1,5 +1,17 @@
 <?php
+
+// # Créer la base de données de test
+// php bin/console doctrine:database:create --env=test
+
+# Appliquer les migrations pour créer le schéma
+// php bin/console doctrine:migrations:migrate -n --env=test
+
+# Charger les fixtures (données de test) si nécessaire
+//php bin/console doctrine:fixtures:load -n --env=test   
+
+// composer require --dev symfony/test-pack
 // nous avons créé ce fichier avec symfony console make:test en choisissant WebTestCase
+
 
 namespace App\Tests;
 
