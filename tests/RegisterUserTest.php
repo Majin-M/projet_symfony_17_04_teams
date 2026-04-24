@@ -2,6 +2,9 @@
 
 // # Créer la base de données de test
 // php bin/console doctrine:database:create --env=test
+// #si ça ne fonctionne pas vous pouvez créer la base de données de test directement dans phpmyadmin
+//elle porte le nom de la base de données underscore test
+//dans notre cas ecommerce1_test
 
 # Appliquer les migrations pour créer le schéma
 // php bin/console doctrine:migrations:migrate -n --env=test
