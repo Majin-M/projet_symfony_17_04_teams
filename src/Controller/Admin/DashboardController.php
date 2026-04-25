@@ -66,7 +66,9 @@ class DashboardController extends AbstractDashboardController
         //Ajoute au menu de l'interface un élément correspondant 
         // à l'entité du controller crud, dans notre cas User
         //'Utilisateurs' est le nom que l'on choisi pour cet élément
-        yield MenuItem::linkTo(UserCrudController::class, 'Utilisateurs', 'fas fa-list');
+        yield MenuItem::linkTo(UserCrudController::class, 'Utilisateurs', 'fas fa-user');
+        yield MenuItem::linkTo(CategoryCrudController::class, 'Categories', 'fas fa-list');
+        yield MenuItem::linkTo(ProjetCrudController::class, 'Projets', 'fas fa-compact-disc');
     }
     
 }

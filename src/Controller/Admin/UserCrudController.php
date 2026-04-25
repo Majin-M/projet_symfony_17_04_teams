@@ -28,8 +28,8 @@ class UserCrudController extends AbstractCrudController
      public function configureCrud(Crud $crud): Crud
     {
         return $crud
-        //on choisit le nom du label dans l'entity user
-            ->setEntityLabelInSingular('Utilisateur')//au singulier pour un élément
+        //on choisit le nom du label pour l'entity user
+            ->setEntityLabelInSingular('un utilisateur')//au singulier pour un élément
             ->setEntityLabelInPlural('Utilisateurs')//au pluriel pour le tableau d'éléments
             
             // ...
